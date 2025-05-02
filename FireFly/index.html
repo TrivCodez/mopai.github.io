@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -52,6 +52,17 @@
       background-size: cover;
       background-position: center;
     }
+    #iframe-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    #iframe-container iframe {
+      width: 45%;
+      height: 200px;
+      margin: 5px;
+      border: 1px solid #ccc;
+    }
   </style>
 </head>
 <body>
@@ -90,6 +101,11 @@
       </div>
 
       <div class="form-group mb-3">
+        <label><strong>Iframe Count</strong></label>
+        <input type="number" class="form-control" id="txt-iframe-count" value="1" min="1">
+      </div>
+
+      <div class="form-group mb-3">
         <label><strong>Interval</strong></label>
         <select class="form-select" id="slc-interval">
           <option value="5000">5 seconds</option>
@@ -107,9 +123,19 @@
           <option value="false" selected>Disabled (default)</option>
         </select>
       </div>
+
+      <div class="form-group mb-3">
+        <label><strong>Open Method</strong></label>
+        <select class="form-select" id="slc-open-method">
+          <option value="iframe" selected>Open in iframe</option>
+          <option value="tab">Open in new tab</option>
+        </select>
+      </div>
     </div>
 
-    <div id="div-bing" class="mt-4"></div>
+    <div id="div-bing" class="mt-4">
+      <div id="iframe-container"></div>
+    </div>
   </main>
 
   <footer>
